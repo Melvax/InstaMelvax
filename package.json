@@ -13,8 +13,15 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "detective-stylus": "1.0.0",
     "emmet": "1.6.3",
-    "vue": "^2.5.2"
+    "style-resources-loader": "1.2.1",
+    "stylus": "0.54.5",
+    "stylus-loader": "3.0.2",
+    "vue": "^2.5.2",
+    "vue-parallax-js": "0.2.3",
+    "vue-router": "3.0.2",
+    "vuex": "3.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -71,6 +78,15 @@
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
-  "keywords": ["beats", "instagram", "vuejs", "melvax"]
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "keywords": [
+    "beats",
+    "instagram",
+    "vuejs",
+    "melvax"
+  ]
 }

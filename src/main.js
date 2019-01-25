@@ -2,12 +2,35 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from "vue";
 import App from "./App";
+import VueRouter from "vue-router";
+import Vuex from "vuex";
+
+Vue.use(VueRouter);
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  }
+});
+
+const router = new VueRouter({
+  mode: "history",
+  routes: [
+    {
+      path: "/",
+      component: require("./components/HelloWorld.vue")
+    }
+  ]
+});
 
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
+  router,
+  store,
   components: { App },
   template: "<App/>"
 });

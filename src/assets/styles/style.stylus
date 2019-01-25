@@ -1,0 +1,37 @@
+.stylus
+  color: black
+
+.gang
+  color:red
+
+hidden
+  display:none
+
+.image-container
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 90%;
+
+
+  //background-color: red
+
+.image
+  //max-height:40vh
+  max-height:450px
+  border-radius:9px
+
+.vuepost
+  margin-bottom: 50px
+
+//
+@font-face
+  font-family dinpro
+  font-style normal
+  src url(..assets/fonts/DINPro_Bold.ttf)
+
+.dinpro
+  font-family dinpro
+  
