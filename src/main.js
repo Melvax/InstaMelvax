@@ -2,27 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from "vue";
 import App from "./App";
-import VueRouter from "vue-router";
-import Vuex from "vuex";
-
-Vue.use(VueRouter);
-Vue.use(Vuex);
-
-const store = new Vuex.Store({
-  state: {
-    count: 0
-  }
-});
-
-const router = new VueRouter({
-  mode: "history",
-  routes: [
-    {
-      path: "/",
-      component: require("./components/HelloWorld.vue")
-    }
-  ]
-});
+import router from "./router.js";
+import store from "./store.js";
 
 Vue.config.productionTip = false;
 
@@ -34,3 +15,21 @@ new Vue({
   components: { App },
   template: "<App/>"
 });
+/*
+Ce qui'il reste à faire 
+
+-faire vue pour post 
+-
+-Anime.js
+-lazy loading
+-Splash screen
+-profile view
+-NAvigation inférieur pour avoir un sentiment NAtif
+-ajouter Notifications
+-reflechir a un systeme de page pour le routeur avec id de post
+- animation ente page.
+-hover blur 
+-ajouter Stripe pour paiement a prix libre à partire de 1€ 
+-NUXT pour ssr et SEO
+
+*/

@@ -1,7 +1,7 @@
 {
   "name": "instamelvax",
   "version": "1.0.0",
-  "description": "I love instagram!\nI am building my own version of it with a marketplace so it can be usefull for me. The goal here is to sell my beats and show my projects on my own plateform InstaMelvax and to show my Vuejs skills. feel free to tell me whatever you think of this website.\n\n",
+  "description": "I love instagram!\nI am building my own version of it with a marketplace so it can be usefull for me. The goal here is to sell my beats and show my projects on my own plateform InstaMelvax and to show my Vuejs skills. feel free to tell me whatever you think of this website.\n\nDependencies  used :\nVue router, Vuex\n",
   "main": "src/main.js",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "stylus": "0.54.5",
     "stylus-loader": "3.0.2",
     "vue": "^2.5.2",
+    "vue-localstorage": "0.6.2",
     "vue-parallax-js": "0.2.3",
     "vue-router": "3.0.2",
     "vuex": "3.1.0"
@@ -78,15 +79,6 @@
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
-  "keywords": [
-    "beats",
-    "instagram",
-    "vuejs",
-    "melvax"
-  ]
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
+  "keywords": ["vuejs", "instagram", "vuex"]
 }

@@ -26,6 +26,10 @@ hidden
 .vuepost
   margin-bottom: 50px
 
+.detailImage
+  margin : 0 auto;
+  max-width: 500px;
+  width:100%;
 //
 @font-face
   font-family dinpro

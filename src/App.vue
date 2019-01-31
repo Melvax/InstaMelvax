@@ -1,38 +1,33 @@
 <template>
-  <div id="app">
-    <!-- img width="25%" src="./assets/logo.png" -->
-    <!-- HelloWorld/ -->
-    <!-- p class="DINPRO"><strong>GANG </strong></p -->
-    <myheader />
-
-    <mybody :posts="posts" :filters="filters" />
-
-    <myfooter />
-  </div>
+  <div id="app"><router-view> </router-view></div>
 </template>
 
 <script>
+import feed from "./components/Feed.vue";
 import HelloWorld from "./components/HelloWorld";
-import myheader from "./components/Header";
-import myfooter from "./components/Footer";
-import mybody from "./components/PhoneBody";
 
-import filters from "./data/filters.js";
-import posts from "./data/posts.js";
+// local storage contrairement au session storage reste quand le navigateur ferme
+import localstorage from "vue-localstorage";
+import Vue from "vue";
+
+Vue.use(localstorage);
 
 export default {
   name: "App",
   components: {
     HelloWorld,
-    myheader,
-    myfooter,
-    mybody
+    feed
   },
   data() {
-    return {
-      posts,
-      filters
-    };
+    return {};
+  },
+  mounted() {
+    // test pour voir si le localstorage fonctionne
+    this.$localStorage.set("gang", "this is my gang");
+    var localgang = this.$localStorage.get("gang");
+    if (localgang) {
+      console.log(localgang);
+    }
   }
 };
 </script>

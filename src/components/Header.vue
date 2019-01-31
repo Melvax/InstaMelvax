@@ -5,8 +5,8 @@
       <img
         class="mylogo"
         src="https://uploads.codesandbox.io/uploads/user/60940ceb-6073-4bec-88ad-3139b09c452c/9T7R-MELVAX_black_hard_transparent2.png"
-        height="88vw"
-        width="88vw"
+        height="75px"
+        width="75px"
         alt="melvax logo"
       />
     </p>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "myHeader",
   data() {
     return {
       msg: "Welcome to Your Vue.js App"

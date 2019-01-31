@@ -5,6 +5,7 @@
       :post="post"
       :key="posts.indexOf(post)"
       class="vuepost"
+      @click.native="LogUserName(post);"
     />
   </div>
 </template>
@@ -21,6 +22,11 @@ export default {
     return {
       msg: "gang"
     };
+  },
+  methods: {
+    LogUserName(post) {
+      //console.log(post.username);
+    }
   },
   props: {
     posts: Array,

@@ -12,7 +12,9 @@
     </div>
     <div class="level image-container">
       <div class="level-item">
-        <div data-tilt><img :src="post.postImage" class="image" /></div>
+        <div data-tilt>
+          <img @click="LogCaption" :src="post.postImage" class="image" />
+        </div>
         <!-- Tilt element -->
       </div>
     </div>
@@ -22,18 +24,15 @@
       <!-- p class="likes">{{ post.likes }} likes</p -->
       <div></div>
       <p class="caption level-item">
-        <span>{{ post.username }}</span> {{ post.caption }}
+        <span>
+          {{ post.username }} <i>{{ post.caption }}</i>
+        </span>
       </p>
     </div>
   </div>
 </template>
 
 <script>
-//import tilt.js and try some stuff? or not
-// anime.js
-// hover or click effect
-//router
-
 export default {
   name: "VuePost",
 
@@ -41,6 +40,16 @@ export default {
 
   props: {
     post: Object
+  },
+  methods: {
+    LogCaption() {
+      console.log("the caption is ");
+      //console.log(this.post.caption);
+
+      this.$localStorage.set("currentPost", JSON.stringify(this.post));
+      var currentPost = this.$localStorage.get("currentPost");
+      console.log(JSON.parse(currentPost).postImage);
+    }
   }
 };
 </script>
