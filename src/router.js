@@ -9,6 +9,10 @@ export default new VueRouter({
     {
       path: "/",
       component: require("./components/Feed.vue")
+    },
+    {
+      path: "/post",
+      component: require("./components/PostDetails.vue")
     }
   ]
 });

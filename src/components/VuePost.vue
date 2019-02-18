@@ -12,9 +12,9 @@
     </div>
     <div class="level image-container">
       <div class="level-item">
-        <div data-tilt>
+        <router-link to="/post/">
           <img @click="LogCaption" :src="post.postImage" class="image" />
-        </div>
+        </router-link>
         <!-- Tilt element -->
       </div>
     </div>
@@ -47,6 +47,9 @@ export default {
       //console.log(this.post.caption);
 
       this.$localStorage.set("currentPost", JSON.stringify(this.post));
+      console.log("y coordinate : " + event.clientY); // y coordinate
+      this.$localStorage.set("yclick", JSON.stringify(event.clientY));
+
       var currentPost = this.$localStorage.get("currentPost");
       console.log(JSON.parse(currentPost).postImage);
     }

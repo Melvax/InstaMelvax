@@ -13,14 +13,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "detective-stylus": "1.0.0",
-    "emmet": "1.6.3",
-    "style-resources-loader": "1.2.1",
+    "@babel/core": "7.2.2",
     "stylus": "0.54.5",
     "stylus-loader": "3.0.2",
     "vue": "^2.5.2",
     "vue-localstorage": "0.6.2",
-    "vue-parallax-js": "0.2.3",
     "vue-router": "3.0.2",
     "vuex": "3.1.0"
   },
