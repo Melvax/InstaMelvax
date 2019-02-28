@@ -13,7 +13,12 @@
     <div class="level image-container">
       <div class="level-item">
         <router-link to="/post/">
-          <img @click="LogCaption" :src="post.postImage" class="image" />
+          <img
+            @click="LogCaption"
+            @mouseover="mouseOver"
+            :src="post.postImage"
+            class="image"
+          />
         </router-link>
         <!-- Tilt element -->
       </div>
@@ -52,6 +57,9 @@ export default {
 
       var currentPost = this.$localStorage.get("currentPost");
       console.log(JSON.parse(currentPost).postImage);
+    },
+    mouseOver() {
+      console.log("mouse hover");
     }
   }
 };

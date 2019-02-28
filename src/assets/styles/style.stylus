@@ -28,8 +28,9 @@ hidden
 
 .detailImage
   margin : 0 auto;
-  max-width: 500px;
+  max-width: 600px;
   width:100%;
+  opacity:0;
 //
 @font-face
   font-family dinpro

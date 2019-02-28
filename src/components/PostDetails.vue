@@ -25,10 +25,19 @@ export default {
   },
   created() {
     console.log("chakal cest monté");
+    //var chakal = document.getElementsByClassName("chakal");
+
+    //chakal.style.opacity = "0";
+
     this.translatey = JSON.parse(this.$localStorage.get("yclick"));
 
     //chakal.style.filter = "alpha(opacity=50)"; // IE fallback
     this.animatechakal(this.translatey);
+  },
+  BeforeMounted() {
+    var chakal = document.getElementsByClassName("chakal");
+
+    chakal.style.opacity = "0";
   },
   computed: {
     changeCurrentPost() {
@@ -48,7 +57,7 @@ export default {
         anime({
           targets: "#chakal",
           translateY: x,
-          duration: 870,
+          duration: 700 + x * 0.5,
           easing: "easeInBack",
           direction: "reverse",
           borderRadius: ["0%", "20%"],
@@ -59,8 +68,8 @@ export default {
     }
   },
   mounted() {
-    var chakal = document.getElementById("chakal");
-    chakal.style.opacity = "0";
+    //var chakal = document.getElementById("chakal");
+    //chakal.style.opacity = "0";
     this.currentPost = JSON.parse(this.$localStorage.get("currentPost"));
     //console.log("click y test " + this.translatey);
 
