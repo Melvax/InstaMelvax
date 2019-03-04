@@ -1,3 +1,6 @@
+.container-margin
+  margin-right: 20px;
+  margin-left:20px;
 .stylus
   color: black
 
@@ -31,7 +34,8 @@ hidden
   max-width: 600px;
   width:100%;
   opacity:0;
-//
+
+// FONTS 
 @font-face
   font-family dinpro
   font-style normal
@@ -39,4 +43,20 @@ hidden
 
 .dinpro
   font-family dinpro
-  
+
+@font-face 
+  font-family bsf
+  font-style bold
+  src url(..assets/fonts/basicsanssfbold.ttf)
+
+.bsf 
+  font-family bsf
+
+@font-face
+  font-family heimheim
+  src url(...assets/fonts/Heimat_Stencil_SemiBold.ttf)
+
+.heimasf
+  font-family heimheim  
+  font-size 50px
+

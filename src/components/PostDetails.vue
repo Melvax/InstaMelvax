@@ -1,21 +1,30 @@
 <template>
-  <div id="postdetails" class="level">
-    <div class="level-item">
-      <div>
+  <div id="postdetails" class="">
+    <div >
         <img
-          class="detailImage chakal level-item "
+          class="detailImage  level-item "
           :src="currentPost.postImage"
           alt=""
           id="chakal"
           @click="animatechakal"
         />
-        <!-- p v-if="true" class="level-left"><strong>chacal </strong></p -->
-        <p class=" has-text-centered">{{ currentPost.caption }}</p>
+    </div>
+      <!-- p v-if="true" class="level-left"><strong>chacal </strong></p -->
+      <div class="container container-margin">
+        <!--
+          p class=" heimasf ">
+            <strong> {{ currentPost.username }} </strong>
+          </p>
+          <p class=" ">{{ currentPost.caption }}</p
+        -->
+        <editor />
       </div>
     </div>
   </div>
 </template>
 <script>
+import editor from "./Editor.vue";
+
 export default {
   data() {
     return {
@@ -23,21 +32,21 @@ export default {
       translatey: 0
     };
   },
+  components: {
+    editor
+  },
   created() {
-    console.log("chakal cest monté");
-    //var chakal = document.getElementsByClassName("chakal");
-
-    //chakal.style.opacity = "0";
+    console.log("chakal cest créé");
 
     this.translatey = JSON.parse(this.$localStorage.get("yclick"));
+    this.animatechakal(this.translatey);
 
     //chakal.style.filter = "alpha(opacity=50)"; // IE fallback
-    this.animatechakal(this.translatey);
   },
-  BeforeMounted() {
-    var chakal = document.getElementsByClassName("chakal");
+  beforeMount() {
+    console.log("chakal c'est beforemounté");
 
-    chakal.style.opacity = "0";
+    //document.getElementById("chakal").style.opacity = "0.0";
   },
   computed: {
     changeCurrentPost() {
@@ -64,20 +73,26 @@ export default {
           opacity: ["1", "0"],
           scale: ["1", ".85"]
         });
-      }, 5);
+      }, 1);
     }
   },
   mounted() {
     //var chakal = document.getElementById("chakal");
     //chakal.style.opacity = "0";
+    console.log("chakal c'est monté");
     this.currentPost = JSON.parse(this.$localStorage.get("currentPost"));
+
     //console.log("click y test " + this.translatey);
 
     //this.currentPost = this.$localStorage.get("currentPost");
-
+    window.onscroll = function(e) {
+      console.log(window.scrollY); // Value of scroll Y in px
+    };
     //console.log(JSON.parse(this.currentPost).postImage);
     //this.currentPost = JSON.parse(this.$localStorage.get("currentPost").postImage;
   }
 };
 </script>
-<style lang="stylus" src="../assets/styles/style.stylus"></style>
+<style lang="stylus" src="../assets/styles/style.stylus">
+
+</style>

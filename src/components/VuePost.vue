@@ -28,7 +28,7 @@
       <!-- div class="heart"><i class="far fa-heart fa-lg"></i></div -->
       <!-- p class="likes">{{ post.likes }} likes</p -->
       <div></div>
-      <p class="caption level-item">
+      <p class="caption  level-item">
         <span>
           {{ post.username }} <i>{{ post.caption }}</i>
         </span>
