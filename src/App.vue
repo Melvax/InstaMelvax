@@ -9,7 +9,9 @@ import HelloWorld from "./components/HelloWorld";
 // local storage contrairement au session storage reste quand le navigateur ferme
 import localstorage from "vue-localstorage";
 import Vue from "vue";
+import vBlur from "v-blur";
 
+Vue.use(vBlur);
 Vue.use(localstorage);
 
 export default {

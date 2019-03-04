@@ -1,39 +1,44 @@
 <template>
   <div class="editor">
-    <editor-menu-bar :editor="editor">
-      <div class="menubar" slot-scope="{ commands, isActive }">
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.heading({ level: 1 }) }"
-          @click="commands.heading({ level: 1 });"
-        >
-          Title
-        </button>
+    <div class="level">
+      <div class="level-item">
+        <editor-menu-bar :editor="editor">
+          <div class="menubar" slot-scope="{ commands, isActive }">
+            <button
+              class="menubar__button"
+              :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+              @click="commands.heading({ level: 1 });"
+            >
+              Title
+            </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.heading({ level: 2 }) }"
-          @click="commands.heading({ level: 2 });"
-        >
-          Sub
-        </button>
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.paragraph() }"
-          @click="commands.paragraph"
-        >
-          Normal
-        </button>
+            <button
+              class="menubar__button"
+              :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+              @click="commands.heading({ level: 2 });"
+            >
+              Sub
+            </button>
+            <button
+              class="menubar__button"
+              :class="{ 'is-active': isActive.paragraph() }"
+              @click="commands.paragraph"
+            >
+              Normal
+            </button>
 
-        <button class="menubar__button" @click="commands.undo">
-          <img src="https://img.icons8.com/windows/15/000000/undo.png" />
-        </button>
+            <button class="menubar__button" @click="commands.undo">
+              <img src="https://img.icons8.com/windows/15/000000/undo.png" />
+            </button>
 
-        <button class="menubar__button" @click="commands.redo">
-          <img src="https://img.icons8.com/windows/15/000000/redo.png" />
-        </button>
+            <button class="menubar__button" @click="commands.redo">
+              <img src="https://img.icons8.com/windows/15/000000/redo.png" />
+            </button>
+          </div>
+        </editor-menu-bar>
       </div>
-    </editor-menu-bar>
+    </div>
+
     <editor-floating-menu :editor="editor">
       <div
         slot-scope="{
@@ -155,7 +160,9 @@
         </button>
       </div>
     </editor-menu-bubble>
-    <editor-content class="editor__content" :editor="editor" />
+    <div class="content-container">
+      <editor-content class="editor__content" :editor="editor" />
+    </div>
   </div>
 </template>
 
@@ -219,28 +226,26 @@ export default {
           new History()
         ],
         content: `
+          <h1>
+            Tell us,
+          </h1>
           <h2>
-            Hi there,
-          </h2>
-          <p>
-            this is a very <em>basic</em> example of tiptap.
-          </p>
-          <pre><code>body { display: none; }</code></pre>
-          <ul>
-            <li>
-              A regular list
-            </li>
-            <li>
-              With regular items
-            </li>
-          </ul>
+            Start writing your own story 
+          </h2>          
+
           <blockquote>
-            It's amazing 👏
+            You must aim the ⭐️ to lan on the ☀️
             <br />
             – mom
           </blockquote>
-        `
-      })
+        `,
+        onUpdate: ({ getJSON, getHTML }) => {
+          this.html = getHTML();
+          //console.log(this.html);
+        }
+      }),
+      title: "Gang Title",
+      subtitle: "This is a gang subtitle"
     };
   },
   beforeDestroy() {

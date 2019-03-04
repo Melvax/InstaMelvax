@@ -1,9 +1,16 @@
+
+.content-container{
+  margin-left:15px;
+}
 .container-margin
   margin-right: 20px;
   margin-left:20px;
 .stylus
   color: black
 
+.detail-img-container{
+  background-color:white
+}
 .gang
   color:red
 
